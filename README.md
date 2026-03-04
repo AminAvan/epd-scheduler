@@ -77,12 +77,14 @@ According to the example,
 ## Citation
 If you use the content of this repository in your research or projects, please cite our paper:
 ```
-@inproceedings{avan2023robust,
-  title={A Robust Scheduling Algorithm for Overload-Tolerant Real-Time Systems},
-  author={Avan, Amin and Azim, Akramul and Mahmoud, Qusay H},
-  booktitle={2023 IEEE 26th International Symposium on Real-Time Distributed Computing (ISORC)},
-  pages={1--10},
+@INPROCEEDINGS{10197026,
+  author={Avan, Amin and Azim, Akramul and Mahmoud, Qusay H.},
+  booktitle={2023 IEEE 26th International Symposium on Real-Time Distributed Computing (ISORC)}, 
+  title={A Robust Scheduling Algorithm for Overload-Tolerant Real-Time Systems}, 
   year={2023},
-  organization={IEEE}
-}
+  volume={},
+  number={},
+  pages={1-10},
+  keywords={Context;Schedules;Scheduling algorithms;Switches;Real-time systems;Scheduling;Partitioning algorithms;Scheduling Algorithms;Dynamic Scheduling;Overload Tolerance},
+  doi={10.1109/ISORC58943.2023.00013}}
 ```
