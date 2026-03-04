@@ -6,14 +6,11 @@ DESCRIPTION:
     This program implements the Earliest Deadline First (EDF) algorithm for
     overloaded workloads (utilization > 1).
 
-    Unlike the LLF, EPE, and RM versions in this series, this EDF
-    implementation does NOT simulate scheduling tick by tick. Instead, it
-    uses a static offline approach: all job instances across the hyperperiod
-    are sorted into EDF order, and each job's start time is computed as the
-    cumulative sum of all preceding jobs' execution times. Each job is then
-    checked once — if its computed start time exceeds its deadline, it is
-    marked as a miss. This assumes a non-preemptive processor that never
-    idles between jobs.
+    All job instances across the hyperperiod are sorted into EDF order, and
+    each job's start time is computed as the cumulative sum of all preceding
+    jobs' execution times. Each job is then checked once; if its computed
+    start time exceeds its deadline, it is marked as a miss. This assumes
+    a non-preemptive processor that never idles between jobs.
 
 --------------------------------------------------------------------------------
 ALGORITHM OVERVIEW:
