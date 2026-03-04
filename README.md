@@ -2,6 +2,8 @@
 
 > **Based on the paper:** *"A Robust Scheduling Algorithm for Overload-Tolerant Real-Time Systems (IEEE ISORC 2023)"*
 
+> **Presentation Slides:** For a visual overview of EPD please refer to the [Presentation Slides](./Slides_A%20Robust%20Scheduling%20Algorithm%20for%20Overload-Tolerant%20Real-Time%20Systems.pdf).
+
 ## Overview
 In soft real-time systems, overload conditions can occur and represent a critical point of failure. When a system becomes overloaded, classic scheduling algorithms like Rate Monotonic (RM), Earliest Deadline First (EDF), and Least Laxity First (LLF) suffer from severe performance degradation due to the **domino effect** and excessive **context switching**.
 
