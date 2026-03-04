@@ -75,7 +75,7 @@ According to the example,
 	* Period: 20
 
 ## Citation
-If you use this dataset for your research, please cite our paper [A Robust Scheduling Algorithm for Overload-Tolerant Real-Time Systems](https://ieeexplore.ieee.org/document/10197026)
+If you use the content of this repository in your research or projects, please cite our paper:
 ```
 @inproceedings{avan2023robust,
   title={A Robust Scheduling Algorithm for Overload-Tolerant Real-Time Systems},
