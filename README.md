@@ -7,9 +7,9 @@ In soft real-time systems, overload conditions can occur and represent a critica
 
 This repository contains the implementation of the **Earliest Possible Deadline (EPD)** algorithm. EPD is a novel robust task-scheduling algorithm designed for both uniprocessor and partitioned multiprocessor systems. It maintains optimal performance under normal conditions while gracefully handling overload situations without sacrificing system efficiency.
 
-All the programs of [RM](./Algorithms/RM%20scheduling%20algorithm_overload%20edition.py), LLF, EDF is modified from conventional implementation with conducting the task scheduling procedure when the input is an overloaded-workload while the conventional implementation of these algorithms (RM, LLF, EDF) are not working with overloaded workload as an input and provide an error that the workload is "overloaded" and halt the conducting scheduling.
+All the programs of [RM](./Algorithms/RM%20scheduling%20algorithm_overload%20edition.py), [LLF](./Algorithms/LLF%20scheduling%20algorithm_overload%20edition.py), [EDF](./Algorithms/EDF%20scheduling%20algorithm_overload%20edition.py) is modified from conventional implementation with conducting the task scheduling procedure when the input is an overloaded-workload while the conventional implementation of these algorithms (RM, LLF, EDF) are not working with overloaded workload as an input and provide an error that the workload is "overloaded" and halt the conducting scheduling.
 
-The implementations of the RM, LLF, and EDF scheduling algorithms have been modified to continue scheduling tasks even under *overload* conditions. In contrast, standard implementations of these algorithms do not support *overloaded* workloads; they typically throw an error and halt the scheduler.
+The implementations of the [RM](./Algorithms/RM%20scheduling%20algorithm_overload%20edition.py), [LLF](./Algorithms/LLF%20scheduling%20algorithm_overload%20edition.py), and [EDF](./Algorithms/EDF%20scheduling%20algorithm_overload%20edition.py) scheduling algorithms have been modified to continue scheduling tasks even under *overload* conditions. In contrast, standard implementations of these algorithms do not support *overloaded* workloads; they typically throw an error and halt the scheduler.
 
 ## Key Features & Contributions
 * **Dual-Mode Efficiency:** Operates similarly to EDF under normal conditions (guaranteeing optimality for non-overloaded systems) but dynamically adapts during overloads.
@@ -19,15 +19,15 @@ The implementations of the RM, LLF, and EDF scheduling algorithms have been modi
 * **Versatile Architecture:** Designed to operate seamlessly on uniprocessor and partitioned multiprocessor environments.
 
 ## How EPD Works
-Instead of blindly attempting to execute tasks as they approach their deadlines, EPD introduces a crucial feasibility check called "execution possibility (EP)", defined in Eq. (4). 
+Instead of blindly attempting to execute tasks as they approach their deadlines, [EPD](./Algorithms/EPD%20scheduling%20algorithm_overload%20edition.py) introduces a crucial feasibility check called "execution possibility (EP)", defined in Eq. (4). 
 
-EPD allocates processor time based on the feasibility of task completion. Specifically, EPD executes the task with the *earliest absolute deadline* (denoted as $task_a$) only if that task can be completed before its deadline (i.e., $EP_a \le 1$).
+[EPD](./Algorithms/EPD%20scheduling%20algorithm_overload%20edition.py) allocates processor time based on the feasibility of task completion. Specifically, [EPD](./Algorithms/EPD%20scheduling%20algorithm_overload%20edition.py) executes the task with the *earliest absolute deadline* (denoted as $task_a$) only if that task can be completed before its deadline (i.e., $EP_a \le 1$).
 
 If $task_a$ cannot mathematically finish in time (i.e., $EP_a > 1$), EPD avoids wasting processor cycles on it. Instead, EPD evaluates the remaining tasks (excluding $task_a$) to find the next task with the *earliest absolute deadline*. This iterative procedure continues until the processor is allocated to a task that both has the *earliest deadline* among the remaining tasks and satisfies the condition $EP \le 1$.
 
 ## Workload
 
-This workload dataset currently consists of one-hundred overloaded workloads with different tasks.
+The [workload dataset](./Workloads/WorkloadDataset.csv) currently consists of one-hundred overloaded workloads with different tasks.
 
 ### Description
 Each workload has parameters including:
