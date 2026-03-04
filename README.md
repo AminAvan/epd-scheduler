@@ -7,7 +7,7 @@ In soft real-time systems, overload conditions can occur and represent a critica
 
 This repository contains the implementation of the **Earliest Possible Deadline (EPD)** algorithm. EPD is a novel robust task-scheduling algorithm designed for both uniprocessor and partitioned multiprocessor systems. It maintains optimal performance under normal conditions while gracefully handling overload situations without sacrificing system efficiency.
 
-All the programs of [RM](Algorithms/RM scheduling algorithm_overload edition.py), LLF, EDF is modified from conventional implementation with conducting the task scheduling procedure when the input is an overloaded-workload while the conventional implementation of these algorithms (RM, LLF, EDF) are not working with overloaded workload as an input and provide an error that the workload is "overloaded" and halt the conducting scheduling.
+All the programs of [RM](./Algorithms/RM%20scheduling%20algorithm_overload%20edition.py), LLF, EDF is modified from conventional implementation with conducting the task scheduling procedure when the input is an overloaded-workload while the conventional implementation of these algorithms (RM, LLF, EDF) are not working with overloaded workload as an input and provide an error that the workload is "overloaded" and halt the conducting scheduling.
 
 The implementations of the RM, LLF, and EDF scheduling algorithms have been modified to continue scheduling tasks even under *overload* conditions. In contrast, standard implementations of these algorithms do not support *overloaded* workloads; they typically throw an error and halt the scheduler.
 
