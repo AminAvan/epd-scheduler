@@ -14,15 +14,15 @@ This repository contains the implementation of the **Earliest Possible Deadline 
 * **High Processor Utilization:** Maximizes scheduling efficiency and throughput compared to RM, EDF, and LLF.
 * **Versatile Architecture:** Designed to operate seamlessly on uniprocessor and partitioned multiprocessor environments.
 
----
-
 ## How EPD Works
-Instead of blindly attempting to execute tasks as they approach their deadlines, EPD introduces a crucial feasibility check. 
+Instead of blindly attempting to execute tasks as they approach their deadlines, EPD introduces a crucial feasibility check called "execution possibility (EP)", defined in Eq. (4). 
 
-The algorithm allocates processor time based on the *actual possibility* of task completion. Specifically, **EPD executes the task with the earliest absolute deadline ONLY IF that task can be completed within the remaining time prior to its absolute deadline.** If a task cannot mathematically finish in time, EPD avoids wasting processor cycles on it, thereby saving resources for tasks that can actually be saved.
+EPD allocates processor time based on the feasibility of task completion. Specifically, EPD executes the task with the *earliest absolute deadline* (denoted as $task_a$) only if that task can be completed before its deadline (i.e., $EP_a \le 1$).
+
+If $task_a$ cannot mathematically finish in time (i.e., $EP_a > 1$), EPD avoids wasting processor cycles on it. Instead, EPD evaluates the remaining tasks (excluding $task_a$) to find the next task with the *earliest absolute deadline*. This iterative procedure continues until the processor is allocated to a task that both has the *earliest deadline* among the remaining tasks and satisfies the condition $EP \le 1$.
 
 ## Performance vs. Classic Algorithms
-Experimental results demonstrate that EPD consistently outperforms classic scheduling algorithms in overloaded states:
+<!--Experimental results demonstrate that EPD consistently outperforms classic scheduling algorithms in overloaded states:
 
 | Feature/Metric | RM / EDF / LLF | EPD (Our Approach) |
 | :--- | :--- | :--- |
@@ -32,6 +32,7 @@ Experimental results demonstrate that EPD consistently outperforms classic sched
 | **Context Switching** | High Overhead | **Zero/Minimal Overhead** |
 | **Miss Rate** | High | **Lowest** |
 | **Throughput & Efficiency**| Limited | **Highest** |
+-->
 
 
 ## Workload
